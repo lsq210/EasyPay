@@ -1,0 +1,54 @@
+sudo: required
+
+language: android
+
+android:
+  components:
+    - tools
+    - build-tools-26.0.2
+    - android-27
+    - extra-android-m2repository
+    - extra-android-support
+    - extra-google-m2repository
+  licenses:
+    - 'android-sdk-license.*'
+
+addons:
+  apt:
+    packages:
+      - xvfb
+
+cache:
+  directories:
+    - node_modules
+    - platforms
+    - plugins
+
+before_install:
+  # Add node.js dependencies.
+  - curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+  - sudo apt-get install nodejs
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - source ~/.bashrc
+  - node -v && npm -v && yarn -v
+
+install:
+  - sudo npm install -g cordova
+  - yarn
+
+
+script:
+  - yarn build
+  - yarn build:android
+  - yarn release:android
+  - mv ./platforms/android/app/build/outputs/apk/release/app-release.apk easy-pay_$TRAVIS_TAG.apk
+
+deploy:
+  provider: releases
+  skip-cleanup: true
+  overwrite: true
+  api_key: $GH_TOKEN
+  file: 
+    - "easy-pay_$TRAVIS_TAG.apk"
+  on:
+    tags: true

@@ -1,0 +1,19 @@
+.DS_Store
+npm-debug.log
+npm-debug.log.*
+thumbs.db
+www/*
+node_modules/
+!.gitkeep
+
+bin/*
+plugins/*
+platforms/*
+
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
