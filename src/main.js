@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import './styles'
+import './assets/svg'
 import './apis/mock'
 
 document.addEventListener('deviceready', () => {

@@ -1,22 +1,22 @@
 <template>
   <div class="bottom">
     <div class="item" 
-      v-for="(item, index) in navList"
-      v-bind:key="`navList-${index}`"
+      v-for="(item, index) in NavList"
+      v-bind:key="`NavList-${index}`"
       v-on:click="$router.push(item.path)">
-      <div>icon</div>
+      <svg-icon v-bind:icon-class="item.icon"></svg-icon><br>
       <span v-bind:class="{'active':$route.path===item.path}">{{ item.text }}</span>
     </div>
   </div>
 </template>
 
 <script>
-import navList from '@/router/navList'
+import NavList from '@/router/NavList'
 export default {
   name: 'navigation',
   data () {
     return {
-      navList
+      NavList
     }
   }
 }
@@ -30,6 +30,7 @@ export default {
   position: fixed;
   bottom: 0px;
   border-top: 1px solid #aaaaaa;
+  background-color: white;
   display: flex;
   .item {
     text-align: center;

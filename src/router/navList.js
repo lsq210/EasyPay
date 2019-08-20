@@ -4,42 +4,47 @@ import Post from '../views/Post'
 import MessagePage from '../views/MessagePage'
 import PersonalPage from '../views/PersonalPage'
 
-const navList = [
+const NavList = [
   {
     path: '/home-page',
     name: 'home-page',
     component: HomePage,
     icon: 'home',
-    text: '主页'
+    text: '主页',
+    show: true
   },
   {
     path: '/discover',
     name: 'discover',
     component: Discover,
-    icon: 'discover',
-    text: '发现'
+    icon: 'home',
+    text: '发现',
+    show: true
   },
   {
     path: '/post',
     name: 'post',
     component: Post,
-    icon: 'post',
-    text: '发布'
+    icon: 'home',
+    text: '发布',
+    show: false
   },
   {
     path: '/message',
     name: 'MessagePage',
     component: MessagePage,
-    icon: 'message',
-    text: '消息'
+    icon: 'home',
+    text: '消息',
+    show: true
   },
   {
     path: '/personal-page',
     name: 'personal-page',
     component: PersonalPage,
-    icon: 'personal',
-    text: '我的'
+    icon: 'home',
+    text: '我的',
+    show: true
   }
 ]
 
-export default navList
+export default NavList
