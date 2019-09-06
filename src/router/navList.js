@@ -46,5 +46,4 @@ const NavList = [
     navShow: true
   }
 ]
-
 export default NavList
