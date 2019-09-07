@@ -18,7 +18,7 @@ const baseRoutes = [
   {
     path: '/404',
     name: '404',
-    component: require('@/components/LandingPage').default
+    component: require('@/views/404').default
   },
   {
     path: '/deal-message',
@@ -42,17 +42,27 @@ var routes = baseRoutes.concat(NavList.map(item => {
     }
   }
 }))
-// routes = routes.map(item => {
-//   if (item.name === 'personal-page') {
-//     item.children = [{
-//       path: item.path,
-//       name: 'my',
-//       component: item.component
-//     }]
-//     item.path = ''
-//   }
-//   return item
-// })
+routes = routes.map(item => {
+  if (item.name === 'personal-page') {
+    item.children = [{
+      path: 'my-deal',
+      name: 'my-deal',
+      component: require('@/components/MyDeal').default,
+      meta: {
+        navShow: true
+      }
+    }, {
+      path: 'comment',
+      name: 'comment',
+      component: require('@/components/Comment').default,
+      meta: {
+        navShow: true
+      }
+    }]
+    item.path = '/personal-page'
+  }
+  return item
+})
 console.log(routes)
 export default new Router({
   routes

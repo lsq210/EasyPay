@@ -9,7 +9,11 @@
         <span class="authentication">已认证</span>
       </div>
     </div>
-    <!-- <router-view></router-view> -->
+    <div class="switchbar">
+      <span v-on:click="$router.push('/personal-page/my-deal')">我的</span>
+      <span v-on:click="$router.push('/personal-page/comment')">评价</span>
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -41,6 +45,16 @@ export default {
       .authentication {
         background-color: white;
       }
+    }
+  }
+  .switchbar {
+    background-color: white;
+    height: 2.2rem;
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 1px solid #888888;
+    span {
+      margin: 10%;
     }
   }
 }
