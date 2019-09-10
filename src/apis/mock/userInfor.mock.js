@@ -1,4 +1,5 @@
 import Mock from 'mockjs'
+import userInfor from './userInfor'
 
 export default {
   // Get demo
@@ -7,7 +8,7 @@ export default {
     return {
       url: config.url,
       time: Mock.mock('@datetime'),
-      userId: 1
+      userInfor
     }
   },
   // Post demo
