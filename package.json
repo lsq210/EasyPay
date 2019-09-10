@@ -29,6 +29,7 @@
     "storejs": "^1.0.25",
     "svg-sprite-loader": "^4.1.6",
     "vue": "^2.5.17",
+    "vue-baidu-map": "^0.21.22",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
