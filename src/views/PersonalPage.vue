@@ -4,7 +4,7 @@
     <div class="intro">
       <img src="@/assets/img/cordova.png">
       <div class="intro-meta">
-        <span>lsq2000</span><br>
+        <span>lsq210</span><br>
         <span>长期出售二手书~</span><br>
         <span class="authentication">已认证</span>
       </div>
@@ -18,7 +18,22 @@
 </template>
 
 <script>
+import homeApi from '@/apis/user.api.js'
 export default {
+  // data () {
+  //   return {
+  //     userId: ''
+  //   }
+  // },
+  mounted: function () {
+    homeApi.getUserInfor()
+      .then(response => {
+        console.log(response)
+      })
+      .catch(error => {
+        console.error(error.message)
+      })
+  }
 }
 </script>
 
