@@ -2,6 +2,11 @@ import Vue from 'vue'
 import './styles'
 import './assets/svg'
 import './apis/mock'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import App from './App.vue'
+
+Vue.use(ElementUI)
 
 document.addEventListener('deviceready', () => {
   if (window.cordova) {
@@ -13,6 +18,7 @@ document.addEventListener('deviceready', () => {
     template: '<App/>',
     components: { App: require('./App').default },
     router: require('./router').default,
-    store: require('./store').default
+    store: require('./store').default,
+    render: h => h(App)
   })
 }, false)

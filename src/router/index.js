@@ -42,17 +42,7 @@ var routes = baseRoutes.concat(NavList.map(item => {
     }
   }
 }))
-// routes = routes.map(item => {
-//   if (item.name === 'personal-page') {
-//     item.children = [{
-//       path: item.path,
-//       name: 'my',
-//       component: item.component
-//     }]
-//     item.path = ''
-//   }
-//   return item
-// })
+
 console.log(routes)
 export default new Router({
   routes
