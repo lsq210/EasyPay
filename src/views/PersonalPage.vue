@@ -28,7 +28,7 @@ export default {
   mounted: function () {
     homeApi.getUserInfor()
       .then(response => {
-        console.log(response)
+        console.log('mock', response.data)
       })
       .catch(error => {
         console.error(error.message)

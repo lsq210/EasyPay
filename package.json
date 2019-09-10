@@ -23,6 +23,7 @@
     "axios": "^0.18.0",
     "cordova-android": "~7.1.2",
     "cordova-browser": "~5.0.4",
+    "element-ui": "^2.12.0",
     "mockjs": "^1.0.1-beta3",
     "svg-sprite-loader": "^4.1.6",
     "vue": "^2.5.17",
