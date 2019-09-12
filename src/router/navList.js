@@ -1,5 +1,5 @@
 import HomePage from '../views/HomePage'
-import Discover from '../views/DealMessage'
+import Discover from '../views/DealMessages'
 import Post from '../views/Post'
 import MessagePage from '../views/MessagePage'
 import PersonalPage from '../views/PersonalPage'
