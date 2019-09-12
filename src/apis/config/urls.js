@@ -32,6 +32,22 @@ let urls = {
       regular: /\/postUserInfor/,
       method: 'post'
     }
+  },
+  deal: {
+    getDealMessages: {
+      url () {
+        return '/getDealMessages'
+      },
+      regular: /\/getDealMessages/,
+      method: 'get'
+    },
+    postDealMessages: {
+      url () {
+        return '/postDealMessages'
+      },
+      regular: /\/postDealMessages/,
+      method: 'post'
+    }
   }
 }
 
