@@ -17,7 +17,6 @@ document.addEventListener('deviceready', () => {
     template: '<App/>',
     components: { App: require('./App').default },
     router: require('./router').default,
-    store: require('./store').default,
-    render: h => h(App)
+    store: require('./store').default
   })
 }, false)
