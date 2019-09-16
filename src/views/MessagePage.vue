@@ -15,31 +15,30 @@
         <el-avatar>
           <img :src="item.avatar">
         </el-avatar>
-        <el-avatar>
-          <img src="@/assets/img/news.png">
-        </el-avatar>
         <span class="name">{{ item.name }}</span><br>
         <span>{{ item.content }}</span><br>
-        <span>{{ item.date }}</span>
+        <span class="date">{{ item.date }}</span>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import newsAvatar from '@/assets/img/news.png'
+import SueyeahAvatar from '@/assets/img/Sueyeah.png'
 export default {
   data () {
     return {
       input: null,
       chat: [
         {
-          avatar: '@/assets/img/news.png',
+          avatar: newsAvatar,
           name: '通知',
           content: '您收到了一条新的评价！',
           date: '2019/8/17 20:00'
         },
         {
-          avatar: '@/assets/img/Sueyeah.png',
+          avatar: SueyeahAvatar,
           name: 'Sueyeah',
           content: '你好，一起拼麻辣香锅吗？',
           date: '2019/8/17 21:00'
@@ -71,6 +70,10 @@ export default {
     .chat-box {
       border-bottom: solid #b1b1b1;
       padding: 8px;
+      .el-avatar {
+        display: inline-block;
+        vertical-align: middle;
+      }
       .name {
         font-size: 18px;
       }
