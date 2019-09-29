@@ -30,7 +30,7 @@
         <svg-icon class="icon-style" icon-class='address'></svg-icon>
         <span>信息学部六舍</span><br>
         <svg-icon class="icon-style" icon-class='dealmessage'></svg-icon>
-        <span>出一张明晚创意城的《哪吒》电影票，位置不错</span><br>
+        <span>出一张明晚创意城的《哪吒》电影票，位置不错</span><br><br>
         <img src="@/assets/img/nezha.jpg">
       </div>
     </el-main>
