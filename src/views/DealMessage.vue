@@ -7,7 +7,7 @@
 
     <div class="person-info">
       <el-avatar :size="90">
-        <img src="@/assets/img/Avatar.png">
+        <img src="@/assets/img/Juhua.png">
       </el-avatar>
       <div class="name">
         <span> Juhua</span>
@@ -57,6 +57,7 @@ export default {
   .share{
     float:right;
     margin-top:12px;
+    margin-right:15px;
   }
 }
 .el-main {

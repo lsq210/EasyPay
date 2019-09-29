@@ -1,8 +1,9 @@
 import HomePage from '../views/HomePage'
-import Discover from '../views/Discover'
-import Post from '../views/Post'
+import Discover from '../views/DiscoverPage'
+import Post from '../views/PostPage'
 import MessagePage from '../views/MessagePage'
 import PersonalPage from '../views/PersonalPage'
+// import MyDeal from '@/components/MyDeal'
 
 const NavList = [
   {

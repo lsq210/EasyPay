@@ -1,99 +1,96 @@
 <template>
-
   <el-container>
-    <el-header>Header</el-header>
+    <el-header height="40">
+      <svg-icon class="back" icon-class='back'></svg-icon>
+      <svg-icon class="share" icon-class='share'></svg-icon>
+    </el-header>
 
     <div class="profile-intro">
-      <img class="avatar_pic" src="@/assets/img/Avatar.png">
-      <div class="personal-info">
-        <span class="name">Juhua</span><br>
+      <el-avatar :size="90">
+        <img src="@/assets/img/Juhua.png">
+      </el-avatar>
+      <div class="name">
+        <span>Juhua</span>
+        <svg-icon class="icon-style" icon-class='IDauthen'></svg-icon>       
+        <span class="icon-style">已认证</span><br>
         <span class="signature">菊花残，满地伤</span><br>
-        <svg-icon class="icon-style" icon-class='IDauthen'></svg-icon>
-        <span class="icon-style">已认证</span>  
-      </div>
-      <div class="profile-personal-letter">
-        <el-link underline="false" href="https://element.eleme.io" target="_blank">私聊</el-link>
       </div>
       <el-row class="btnfollow">
-        <el-button round type="danger" size="medium">关注</el-button>
+        <el-button round type="warning" size="small">私聊</el-button>
+      </el-row>
+      <el-row class="btnfollow">
+        <el-button round type="danger" size="small">关注</el-button>
       </el-row>
     </div>
 
-    <el-main>
-      <div >
-        <div>
-          <el-avatar src="@/assets/img/Avatar.png"></el-avatar>
-        </div>
-      </div>
-    </el-main>
+    <div class="switchbar">
+      <div :class="{theme:imshow,default:!imshow}" v-on:click="$router.push('/personal-page/my-deal');imshow=true">我的</div>
+      <div :class="{theme:!imshow,default:imshow}" v-on:click="$router.push('/personal-page/comment');imshow=false">评价</div>
+    </div>
+    <router-view></router-view>
   </el-container>
+  
 </template>
 
 <script>
 export default {
+
 }
 </script>
 
-<style lang="scss" scoped>
-@import '@/styles/variables.scss';
-.el-header {
-  width: 100%;
-  background:$theme-color;
-}
-.el-main {
-  background-color:rgb(236, 225, 225);
-  text-align: center;
-  height: 100%;
-}
+<style lang="scss">
+  @import '@/styles/variables.scss';
+  .el-header {
+    width: 100%;
+    background:$theme-color;
+    line-height:40px;
+    .share{
+    float:right;
+    margin-top:12px;
+    margin-right:15px;
+    }
+  }
+
+  .switchbar {
+    display: flex;
+    background-color: white;
+    font-size: 17px;
+    text-align: center;
+    height:1.8rem;
+    margin-top:5px;
+  }
+    .theme{
+    color:$theme-color;
+    width:50%;
+    border-bottom: 1px solid;
+  }
+  .default{
+    color:black;
+    width:50%;
+    border-bottom: 1px solid;
+  }
+
+
 .profile-intro {
-  height: 160px;
+  height: 130px;
   display: flex;
   background: rgb(50,50,50);
   color:white;
-
-  .avatar_pic { 
-    display: block;
-    margin-left:40px;
-    margin-top:20px;
-    margin-bottom: 20px;
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    border:2px solid rgb(150,150,150);
+  .el-avatar{
+    margin:15px;
   }
-
-  .personal-info {
-    display: block;
-    margin-left:30px;
-    margin-right:30px;
-    margin-top:40px;
-    margin-bottom: 20px;
-    font-weight:bold;
-    .name{
-      font-size:30px;
-    }
+  .name{
+    font-size:25px;
+    margin-top:30px;  
     .signature{
-      font-size:12px;
+    font-size:12px;
     }
-  }
+  }    
 
-  .profile-personal-letter{
-    background:$theme-color;
-    margin-right:20px;
-    margin-left:20px;
-    margin-top:70px;
-    font-size:15px;
-    height:26px;
-    width:28px;
-    border: 1px solid $theme-color;
-    border-radius:20px;
-    line-height:24px;
-    padding:4px 20px;
-  }
   .btnfollow{
+    float:right;
     margin-right:10px;
-    margin-left:10px;
-    margin-top:70px;
+    margin-top:60px;
   }
 }
 
