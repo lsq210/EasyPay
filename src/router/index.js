@@ -44,6 +44,7 @@ var routes = baseRoutes.concat(NavList.map(item => {
 }))
 routes = routes.map(item => {
   if (item.name === 'personal-page') {
+    item.redirect = '/personal-page/my-deal'
     item.children = [{
       path: 'my-deal',
       name: 'my-deal',
@@ -51,15 +52,18 @@ routes = routes.map(item => {
       meta: {
         navShow: true
       }
-    }, {
+    },
+    {
       path: 'comment',
       name: 'comment',
       component: require('@/components/Comment').default,
       meta: {
         navShow: true
       }
-    }]
+    }
+    ]
     item.path = '/personal-page'
+    item.children.redirect = '/personal-page/my-deal'
   }
   return item
 })
