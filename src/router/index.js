@@ -13,7 +13,7 @@ const baseRoutes = [
   {
     path: '/login',
     name: 'login',
-    component: require('@/components/LandingPage').default
+    component: require('@/views/Login').default
   },
   {
     path: '/404',
