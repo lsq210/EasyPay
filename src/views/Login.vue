@@ -66,9 +66,10 @@ export default {
   }
   .ways {
     margin-top: 30px;
+    display: flex;
+    justify-content: center;
     .item {
       cursor: pointer;
-      float: left;
       margin: 17.5px;
     }
   }
@@ -80,7 +81,6 @@ export default {
 	bottom: 0;
 	height: 40px;
 	width: 100%;
-	// background-color: green;
   font-size: 12px;
 }
 </style>
