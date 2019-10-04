@@ -2,12 +2,12 @@
   <div>
     <div class="title">
       <div class="welcome">欢迎来到供需宝</div>
-      <div class="register">注册新账号</div>
+      <div class="register" @click="$router.push('register')">注册新账号</div>
     </div>
     <div class="loginbody">
       <input v-model="userName" placeholder="用户名" style="width: 66vw"><br>
       <input v-model="password" type="password" placeholder="密码" style="width: 66vw"><br>
-      <el-button round style="width: 30vw; margin-top: 30px;" @click="login()">登录</el-button>
+      <el-button round style="width: 30vw; margin-top: 30px" @click="login()">登录</el-button>
     </div>
     <div class="third-login">
       <div class="split-line">-第三方登录-</div>
@@ -20,7 +20,10 @@
         </div>
       </div> 
     </div>
-    <div class="foot">登录代表您已同意《供需宝用户协议》</div>
+    <div class="foot">
+      <span>登录代表您已同意</span>
+      <a>《供需宝用户协议》</a>
+    </div>
   </div>
 </template>
 
@@ -77,7 +80,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/styles/variables.scss';
 .title {
-  margin: 12vh 25px 12vh 25px;
+  padding: 12vh 25px 12vh 25px;
   align-items: baseline;
   display: flex;
   justify-content: space-between;
@@ -107,7 +110,7 @@ export default {
   }
 }
 .third-login {
-  margin: 60px;
+  margin: 6vh 6vh 0 6vh;
   text-align: center;
   .split-line {
     color:#888888
@@ -127,8 +130,11 @@ export default {
   text-align: center;
   color:#888888;  
 	bottom: 0;
-	height: 40px;
+	height: 4vh;
 	width: 100%;
   font-size: 12px;
+  a {
+    color: $theme-color;
+  }
 }
 </style>

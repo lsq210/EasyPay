@@ -19,6 +19,11 @@ const baseRoutes = [
     component: require('@/views/Login').default
   },
   {
+    path: '/register',
+    name: 'register',
+    component: require('@/views/Register').default
+  },
+  {
     path: '/404',
     name: '404',
     component: require('@/views/404').default
@@ -75,7 +80,7 @@ routes = routes.map(item => {
 
 const guestRoutes = [
   'login',
-  'regist',
+  'register',
   '404'
 ]
 
