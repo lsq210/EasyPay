@@ -1,9 +1,13 @@
 <template>
   <div>
-    <span class="title">欢迎来到供需宝</span>
+    <div class="title">
+      <div class="welcome">欢迎来到供需宝</div>
+      <div class="register">注册新账号</div>
+    </div>
     <div class="loginbody">
-      <input v-model="userId" placeholder="手机号码" style="width: 245px"><br>
-      <input v-model="password" placeholder="短信验证码" style="width: 125px"><el-button round>获取验证码</el-button>
+      <input v-model="userId" placeholder="用户名" style="width: 66vw"><br>
+      <input v-model="password" placeholder="密码" style="width: 66vw"><br>
+      <el-button round style="width: 30vw; margin-top: 30px;">登录</el-button>
     </div>
     <div class="third-login">
       <div class="split-line">-第三方登录-</div>
@@ -40,13 +44,26 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import '@/styles/variables.scss';
 .title {
-  font-size: 30px;
-  line-height: 15rem;
-  margin: 30px;
+  margin: 12vh 25px 12vh 25px;
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  .welcome {
+    font-size: 30px;
+    display: inline-flex;
+  }
+  .register {
+    font-size: 16px;
+    color: $theme-color;
+    display: inline-flex;
+    float: right;
+    right: 0;
+  }
 }
 .loginbody {
-  line-height: 5rem;
+  line-height: 4rem;
   text-align: center;
   input {
     font-size: 20px;

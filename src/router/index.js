@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import NavList from './NavList'
+import cache from '../cache'
+import {USER_TOKEN} from '../cache/keys'
 
 const originalPush = Router.prototype.push
 Router.prototype.push = function push (location) {
@@ -68,6 +70,17 @@ routes = routes.map(item => {
   return item
 })
 console.log(routes)
-export default new Router({
-  routes
+
+const router = new Router({routes})
+
+router.beforeEach((to, from, next) => {
+  if (to.path === '/login') {
+    next()
+  } else if (!cache.get(USER_TOKEN)) {
+    next({ path: '/login' })
+  } else {
+    next()
+  }
 })
+
+export default router
