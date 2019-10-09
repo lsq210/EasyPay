@@ -17,6 +17,22 @@ let urls = {
       method: 'post'
     }
   },
+  login: {
+    validate: {
+      url () {
+        return '/validate'
+      },
+      regular: /\/validate/,
+      method: 'get'
+    },
+    regist: {
+      url () {
+        return '/regist'
+      },
+      regular: /\/regist/,
+      method: 'post'
+    }
+  },
   user: {
     getUserInfor: {
       url () {

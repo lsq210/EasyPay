@@ -1,6 +1,7 @@
 import Mock from 'mockjs'
 import urls from '../config/urls'
 import demoMock from './demo.mock'
+import loginMock from './login.mock'
 import userInforMock from './userInfor.mock'
 import dealMock from './dealMessages.mock'
 
@@ -13,6 +14,12 @@ Mock.mock(urls.demo.getRequest.regular, urls.demo.getRequest.method, demoMock.ge
 
 // Post demo
 Mock.mock(urls.demo.postRequest.regular, urls.demo.postRequest.method, demoMock.postRequest)
+
+// Get demo
+Mock.mock(urls.login.validate.regular, urls.login.validate.method, loginMock.validate)
+
+// Post demo
+Mock.mock(urls.login.regist.regular, urls.login.regist.method, loginMock.regist)
 
 // Get userInfor
 Mock.mock(urls.user.getUserInfor.regular, urls.user.getUserInfor.method, userInforMock.getUserInfor)
