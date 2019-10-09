@@ -6,6 +6,9 @@ module.exports = {
   entry: {
     app: './src/main.js'
   },
+  externals: {
+    "BMap": "BMap"
+    },
   output: {
     path: config.build.assetsRoot,
     publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,

@@ -4,6 +4,12 @@ import './assets/svg'
 import './apis/mock'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import BaiduMap from 'vue-baidu-map'
+
+Vue.use(BaiduMap, {
+  // ak 是在百度地图开发者平台申请的密钥 详见 http://lbsyun.baidu.com/apiconsole/key */
+  ak: 'oIK5hbeO8Zb74VgFY3DWL8KccHWx8hI2'
+})
 
 Vue.use(ElementUI)
 
