@@ -17,8 +17,8 @@
       </div>
       <div class="classification" style="margin-top: 15px;">
         <div class="icon"
-        v-for="item of iconlist"
-        v-bind:key="item"
+        v-for="(item, index) of iconlist"
+        v-bind:key="`inconlist-${index}`"
         v-on:click="$router.push(item.path)">
         <svg-icon v-bind:icon-class="item.icon" class="pic" ></svg-icon><br>
         <span v-bind:class="{'active':$route.path===item.path}" @click="iconclick(item)">{{ item.text }}</span>
@@ -29,14 +29,12 @@
       <baidu-map class="map" @ready="handler" :center="centerr" :zoom=17 >
         <bm-geolocation anchor="BMAP_ANCHOR_BOTTOM_RIGHT" :showAddressBar="true" :autoLocation="true"></bm-geolocation>
         <bm-navigation anchor="BMAP_ANCHOR_TOP_RIGHT"></bm-navigation>
-        <div v-for="point of pointlist1"
-        :key="point"
-        v-if="showpo(point)"
-        >
+        <div v-for="(point, index) in pointlist1"
+        :key="`pointList1-${index}`">
           <bm-marker
             :position="{lng: point.position.lng, lat: point.position.lat}" 
             :dragging="false" 
-            @click="infoWindowOpen(point)" 
+            @click="infoWindowOpen(item)" 
             :icon="{
               url: require('@/assets/img/location.png'),
               size: {width: 35, height: 35},
@@ -257,7 +255,8 @@ export default {
 @import '@/styles/variables.scss';
 .map {
   width: 100%;
-  height: 428px;
+  height: 75vh;
+  z-index: 0;
 }
 .header {
   width: 100%;

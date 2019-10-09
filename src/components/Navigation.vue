@@ -32,6 +32,7 @@ export default {
   border-top: 1px solid #aaaaaa;
   background-color: white;
   display: flex;
+  z-index: 1;
   .item {
     text-align: center;
     width: 20%;
