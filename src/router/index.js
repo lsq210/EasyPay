@@ -80,6 +80,36 @@ routes = routes.map(item => {
     item.path = '/personal-page'
     item.children.redirect = '/personal-page/my-deal'
   }
+  if (item.name === 'discover') {
+    item.redirect = '/discover/my-join'
+    item.children = [{
+      path: 'my-join',
+      name: 'my-join',
+      component: require('@/components/MyJoin').default,
+      meta: {
+        navShow: true
+      }
+    },
+    {
+      path: 'near-by',
+      name: 'near-by',
+      component: require('@/components/NearBy').default,
+      meta: {
+        navShow: true
+      }
+    },
+    {
+      path: 'hot-info',
+      name: 'hot-info',
+      component: require('@/components/HotInfo').default,
+      meta: {
+        navshow: true
+      }
+    }
+    ]
+    item.path = '/discover'
+    item.children.redirect = '/discover/my-jion'
+  }
   return item
 })
 
