@@ -103,12 +103,12 @@ routes = routes.map(item => {
       name: 'hot-info',
       component: require('@/components/HotInfo').default,
       meta: {
-        navshow: true
+        navShow: true
       }
     }
     ]
     item.path = '/discover'
-    item.children.redirect = '/discover/my-jion'
+    item.children.redirect = '/discover/my-join'
   }
   return item
 })
