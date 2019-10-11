@@ -58,7 +58,6 @@ export default {
   .body{
     background-color:white;
     width: 99%
-    height：600px
   }
 
   .text {

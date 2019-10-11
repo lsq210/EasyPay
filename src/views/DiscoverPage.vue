@@ -48,7 +48,7 @@ export default {
 .el-header {
     width: 100%;
     background:$theme-color;
-    height:635px;
+    height:100vh;
     .classification {
     width: 99%;
     height: 90px;
