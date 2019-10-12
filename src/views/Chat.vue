@@ -5,17 +5,17 @@
         <svg-icon icon-class="return" style="width: 28px; height: 28px"></svg-icon>
       </div>
     </div>
+    <ChatList></ChatList>
   </div>
   
 </template>
 
 <script>
-import friend from '@/assets/img/Sueyeah.png'
+import ChatList from '../components/ChatList'
 export default {
-  data () {
-    return {
-      img: friend
-    }
+  name: 'app',
+  components: {
+    ChatList
   }
 }
 </script>
