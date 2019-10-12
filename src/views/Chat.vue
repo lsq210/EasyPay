@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="header">
-      <svg-icon>
+      <svg-icon icon-class="return"></svg-icon>
     </div>
   </div>
   
