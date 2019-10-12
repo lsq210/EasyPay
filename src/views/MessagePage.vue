@@ -11,7 +11,8 @@
     <div class="chat">
       <div class="chat-box"
       v-for="(item, index) in chat"
-      v-bind:key="`chat-${index}`">
+      v-bind:key="`chat-${index}`"
+      v-on:click="$router.push('chat')">
         <el-avatar>
           <img :src="item.avatar">
         </el-avatar>
