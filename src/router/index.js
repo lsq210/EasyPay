@@ -34,6 +34,11 @@ const baseRoutes = [
     component: require('@/views/DealMessage').default
   },
   {
+    path: '/chat',
+    name: 'chat',
+    component: require('@/views/Chat').default
+  },
+  {
     path: '*',
     redirect: '404'
   }
