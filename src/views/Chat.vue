@@ -1,14 +1,22 @@
 <template>
   <div>
     <div class="header">
-      <svg-icon icon-class="return"></svg-icon>
+      <div class="back" v-on:click="$router.go(-1)">
+        <svg-icon icon-class="return" style="width: 28px; height: 28px"></svg-icon>
+      </div>
     </div>
   </div>
   
 </template>
 
 <script>
+import friend from '@/assets/img/Sueyeah.png'
 export default {
+  data () {
+    return {
+      img: friend
+    }
+  }
 }
 </script>
 
@@ -17,5 +25,10 @@ export default {
 .header {
   height: 40px;
   background-color: $theme-color;
+  display: flex;
+  .back {
+    margin: auto 0;
+    padding-left: 5px;
+  }
 }
 </style>
