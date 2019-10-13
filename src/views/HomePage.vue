@@ -1,4 +1,3 @@
-
 <template>
   <div>
     <div class="header">
@@ -13,7 +12,7 @@
         v-for="(item, index) of iconlist"
         v-bind:key="`inconlist-${index}`"
         v-on:click="$router.push(item.path)">
-        <svg-icon v-bind:icon-class="item.icon" class="pic" ></svg-icon><br>
+        <svg-icon v-bind:icon-class="item.icon" class="pic"></svg-icon><br>
         <span v-bind:class="{'active':$route.path===item.path}" @click="iconclick(item)">{{ item.text }}</span>
         </div>
       </div>
@@ -22,6 +21,15 @@
       <baidu-map class="map" @ready="handler" :center="centerr" :zoom=17 >
         <bm-geolocation anchor="BMAP_ANCHOR_BOTTOM_RIGHT" :showAddressBar="true" :autoLocation="true"></bm-geolocation>
         <bm-navigation anchor="BMAP_ANCHOR_TOP_RIGHT"></bm-navigation>
+        <bm-circle
+          stroke-color="blue"
+          :center="circlePath.center"
+          :radius="circlePath.radius" 
+          :stroke-opacity="0.5"
+          :stroke-weight="2"
+          :editing="true"
+          @lineupdate="updateCirclePath">
+        </bm-circle>
         <div v-for="(point, index) in pointlist1"
         :key="`pointList1-${index}`">
           <bm-marker
@@ -64,134 +72,141 @@ export default {
       initLocation: false,
       showinfowin: false,
       input: '',
+      circlePath: {
+        center: {
+          lng: 114.3678,
+          lat: 30.541
+        },
+        radius: 100
+      },
       iconlist: [
         {
-          text: '服装闲置',
+          text: '服装',
           icon: 'clothing',
           num: 1
         },
         {
-          text: '二手书籍',
+          text: '书籍',
           icon: 'book',
           num: 2
         },
         {
-          text: '美妆饰品',
+          text: '美妆',
           icon: 'makeup',
           num: 3
         },
         {
-          text: '数码产品',
+          text: '数码',
           icon: '数码产品',
           num: 4
         },
         {
-          text: '共享出行',
+          text: '出行',
           icon: 'trip',
           num: 5
         }
       ],
       pointlist1: [
         {
-          type: '服装闲置',
+          type: '服装',
           text: '出售军训服',
           position: {lng: 114.369, lat: 30.542},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '服装闲置',
+          type: '服装',
           text: '低价出售遥感专业书',
           position: {lng: 114.366, lat: 30.543},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '服装闲置',
+          type: '服装',
           text: '出cherry机械键盘一个',
           position: {lng: 114.367, lat: 30.541},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '二手书籍',
+          type: '书籍',
           text: '出售军训服',
           position: {lng: 114.373, lat: 30.549},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '二手书籍',
+          type: '书籍',
           text: '低价出售遥感专业书',
           position: {lng: 114.372, lat: 30.550},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '二手书籍',
+          type: '书籍',
           text: '出cherry机械键盘一个',
           position: {lng: 114.371, lat: 30.548},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '美妆饰品',
+          type: '美妆',
           text: '出售军训服',
           position: {lng: 114.369, lat: 30.536},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '美妆饰品',
+          type: '美妆',
           text: '低价出售遥感专业书',
           position: {lng: 114.366, lat: 30.534},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '美妆饰品',
+          type: '美妆',
           text: '出cherry机械键盘一个',
           position: {lng: 114.367, lat: 30.535},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '数码产品',
+          type: '数码',
           text: '出售军训服',
           position: {lng: 114.369, lat: 30.547},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '数码产品',
+          type: '数码',
           text: '低价出售遥感专业书',
           position: {lng: 114.366, lat: 30.548},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '数码产品',
+          type: '数码',
           text: '出cherry机械键盘一个',
           position: {lng: 114.367, lat: 30.549},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '共享出行',
+          type: '出行',
           text: '出售军训服',
           position: {lng: 114.381, lat: 30.542},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '共享出行',
+          type: '出行',
           text: '低价出售遥感专业书',
           position: {lng: 114.372, lat: 30.543},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '共享出行',
+          type: '出行',
           text: '出cherry机械键盘一个',
           position: {lng: 114.373, lat: 30.541},
           showinfowin: false,
@@ -201,6 +216,10 @@ export default {
     }
   },
   methods: {
+    updateCirclePath (e) {
+      this.circlePath.center = e.target.getCenter()
+      this.circlePath.radius = e.target.getRadius()
+    },
     infoWindowClose (point) {
       point.showinfowin = false
     },
@@ -257,19 +276,24 @@ export default {
   text-align: center;
   background-color: $theme-color;
   .classification {
-    width: 90vw;
+    width: 94vw;
     height: 60px;
-    background-color: white;
+    // background-color: white;
     margin:0 auto;
     display: flex;
       .icon {
         text-align: center;
         width: 20%;
-        cursor: pointer
+        cursor: pointer;
+        span {
+          font-size: 14px;
+          color: $second-color;
+        }
       }
       .pic{
         width: 40px;
-        height: 35px;
+        height: 40px;
+        fill: $second-color;
       } 
   }
   .el-input{
