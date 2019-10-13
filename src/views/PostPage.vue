@@ -1,20 +1,21 @@
 <template>
-  <div>
+  <div style="overflow-x: hidden">
 <!-- 页面头 -->
     <div class="header">
-      <svg-icon @click.native="$router.push('/home-page')" v-bind:icon-class="'back'" class="icon"></svg-icon>
+      <svg-icon @click.native="$router.go(-1)" v-bind:icon-class="'back'" class="icon"></svg-icon>
+      <svg-icon @click.native="$router.push(home-page)" v-bind:icon-class="'post'" class="icon"></svg-icon>
     </div>
-    <div class="page_title">
-      发布消息
-    </div>
-    <div class="page_subtitle">
-      消息发布后将实时显示在首页上，感兴趣的人可以随时点击进入你的消息界面并与你取得联系
-    </div>
+    <!-- <div class="page_title">
+      发布供需信息
+    </div> -->
+    <!-- <div class="page_subtitle">
+      消息发布后将实时显示在首页上
+    </div> -->
 
 <!-- 主要内容输入模块 -->
     <div class="maintext">
       <textarea type="message"
-        placeholder="请简要叙述你要发布的信息......"
+        placeholder="请尽可能简要地叙述你的需求..."
         v-model="message_text"
         onpropertychange= "this.style.posHeight=this.scrollHeight "
         style="margin: 40px 30px;"
@@ -89,12 +90,11 @@
 
         <el-col :span="16">
           <div class="money">
-            <input v-model="money_input" placeholder="输入金额">元
+            <input v-model="money" placeholder="输入金额">元
           </div>
         </el-col>
       </el-row>
     </div>
-
   </div>
 </template>
 
@@ -106,6 +106,7 @@ export default {
       location: null,
       title_text: '',
       message_text: '',
+      money: null,
       dialogImageUrl: '',
       dialogVisible: false,
       pickerOptions: {
@@ -120,50 +121,47 @@ export default {
     }
   },
   methods: {
-    // getmylocation () {
-    //   let _this = this
-    //   var geolocation = new BMap.Geolocation()
-    //   /* this.getStatus() === BMAP_STATUS_SUCCESS */
-    //   geolocation.getCurrentPosition(function (r) {
-    //     if (r.accuracy == null) {
-    //       alert('您已拒绝地理位置授权')
-    //     } else {
-    //       const myGeo = new BMap.Geocoder()
-    //       myGeo.getLocation(new BMap.Point(r.point.lng, r.point.lat), data => {
-    //         if (data.addressComponents) {
-    //           const result = data.addressComponents
-    //           const location = {
-    //             creditLongitude: r.point.lat, // 经度
-    //             creditLatitude: r.point.lng, // 纬度
-    //             creditProvince: result.province || '', // 省
-    //             creditCity: result.city || '', // 市
-    //             creditArea: result.district || '', // 区
-    //             creditStreet: (result.street || '') + (result.streetNumber || '') // 街道
-    //           }
-    //           _this.location = location
-    //           _this.creditLongitude = location.creditLongitude
-    //           _this.creditLatitude = location.creditLatitude
-    //           _this.creditCity = location.creditCity
-    //           // alert(this.getStatus())
-    //         }
-    //       })
-    //     }
-    //   })
-    // },
+  //   getmylocation () {
+  //     let _this = this
+  //     var geolocation = new BMap.Geolocation()
+  //     /* this.getStatus() === BMAP_STATUS_SUCCESS */
+  //     geolocation.getCurrentPosition(function (r) {
+  //       if (r.accuracy == null) {
+  //         alert('您已拒绝地理位置授权')
+  //       } else {
+  //         const myGeo = new BMap.Geocoder()
+  //         myGeo.getLocation(new BMap.Point(r.point.lng, r.point.lat), data => {
+  //           if (data.addressComponents) {
+  //             const result = data.addressComponents
+  //             const location = {
+  //               creditLongitude: r.point.lat, // 经度
+  //               creditLatitude: r.point.lng, // 纬度
+  //               creditProvince: result.province || '', // 省
+  //               creditCity: result.city || '', // 市
+  //               creditArea: result.district || '', // 区
+  //               creditStreet: (result.street || '') + (result.streetNumber || '') // 街道
+  //             }
+  //             _this.location = location
+  //             _this.creditLongitude = location.creditLongitude
+  //             _this.creditLatitude = location.creditLatitude
+  //             _this.creditCity = location.creditCity
+  //             // alert(this.getStatus())
+  //           }
+  //         })
+  //       }
+  //     })
+  //   },
     handleRemove (file, fileList) {
       console.log(file, fileList)
     },
     handlePictureCardPreview (file) {
       this.dialogImageUrl = file.url
       this.dialogVisible = true
-    },
-    goBack () {
-      console.log('go back')
     }
-  }
+  // },
   // mounted () {
   //   this.getmylocation()
-  // }
+  }
 }
 </script>
 
@@ -172,16 +170,18 @@ export default {
 .header {
   width: 100%;
   height: 60px;
-  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
   .icon {
     width: 30px;
     height: 30px;
-    margin-left : 10px;
-    
+    margin: 10px;
   }
 }
 .page_title{
   margin-left : 30px;
+  margin-right : 30px;
+  width: 100%;
   font-size:40px;
   font-family:"微软雅黑";
   color: rgb(0, 0, 0);
@@ -189,6 +189,7 @@ export default {
 }
 .page_subtitle{
   margin-top : 20px;
+  width: 100%;
   margin-left : 30px;
   margin-right : 30px;
   font-size:15px;
@@ -198,9 +199,10 @@ export default {
 .maintext{
   textarea{
     border: 0;
+    width: 100%;
     outline: none;
     background-color:rgba(255, 255, 255, 255);
-    margin-left : 10px;
+    margin: 0;
     font-size:20px
   }
   textarea::placeholder {
@@ -218,7 +220,15 @@ export default {
 .el-col {
   border-radius: 4px;
 }
+.block{
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  color:rgb(114, 114, 114);
+  font-size:15px;
+}
 .Bottom_subtitle{
+  width: 100%;
   text-align: center;
   margin-top: 10px;
   color:rgb(114, 114, 114);
