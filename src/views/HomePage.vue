@@ -77,7 +77,7 @@ export default {
           lng: 114.3678,
           lat: 30.541
         },
-        radius: 100
+        radius: 200
       },
       iconlist: [
         {
