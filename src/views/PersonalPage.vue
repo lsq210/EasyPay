@@ -1,7 +1,9 @@
 <template>
   <el-container>
     <el-header height="40">
-      <svg-icon class="back" icon-class='back'></svg-icon>
+      <div v-on:click="$router.go(-1)" style="display: inline">
+        <svg-icon class="back" icon-class='back'></svg-icon>
+      </div>
       <svg-icon class="share" icon-class='share'></svg-icon>
     </el-header>
 
@@ -51,35 +53,34 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/styles/variables.scss';
-  .el-header {
-    width: 100%;
-    background:$theme-color;
-    line-height:40px;
-    .share{
+.el-header {
+  width: 100%;
+  background:$theme-color;
+  line-height:40px;
+  .share {
     float:right;
     margin-top:12px;
     margin-right:15px;
-    }
   }
-  .switchbar {
-    display: flex;
-    background-color: white;
-    font-size: 17px;
-    text-align: center;
-    height:1.8rem;
-    margin-top:5px;
-  }
-    .theme{
-    color:$theme-color;
-    width:50%;
-    border-bottom: 1px solid;
-  }
-  .default{
-    color:black;
-    width:50%;
-    border-bottom: 1px solid;
-  }
-
+}
+.switchbar {
+  display: flex;
+  background-color: white;
+  font-size: 17px;
+  text-align: center;
+  height:1.8rem;
+  margin-top:5px;
+}
+.theme {
+  color:$theme-color;
+  width:50%;
+  border-bottom: 1px solid;
+}
+.default {
+  color:black;
+  width:50%;
+  border-bottom: 1px solid;
+}
 .profile-intro {
   height: 130px;
   display: flex;
@@ -87,28 +88,26 @@ export default {
   color:white;
   border-top:1px solid  rgb(50,50,50);
   border-bottom:1px solid  rgb(50,50,50);
-  .el-avatar{
+  .el-avatar {
     margin:15px;
   }
-  .name{
+  .name {
     font-size:25px;
     margin-top:30px;  
-    .signature{
-    font-size:12px;
+    .signature {
+      font-size:12px;
     }
   }    
-
-  .btnfollow{
+  .btnfollow {
     float:right;
     margin-right:10px;
     margin-top:60px;
   }
 }
-
-  .icon-style{
-    margin-top:10px;
-    color:$theme-color;
-    font-size:8px;
-    font-weight: bold;  
-  }
+.icon-style{
+  margin-top:10px;
+  color:$theme-color;
+  font-size:8px;
+  font-weight: bold;  
+}
 </style>

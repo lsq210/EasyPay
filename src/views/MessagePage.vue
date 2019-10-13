@@ -13,12 +13,10 @@
       v-for="(item, index) in chat"
       v-bind:key="`chat-${index}`"
       v-on:click="$router.push('chat')">
-        <el-avatar>
-          <img :src="item.avatar">
-        </el-avatar>
-        <span class="name">{{ item.name }}</span><br>
-        <span>{{ item.content }}</span><br>
-        <span class="date">{{ item.date }}</span>
+        <img :src="item.avatar">
+        <div class="name">{{ item.name }}</div><br>
+        <div class="content">{{ item.content }}</div>
+        <div class="date">{{ item.date }}</div>
       </div>
     </div>
   </div>
@@ -41,7 +39,7 @@ export default {
         {
           avatar: SueyeahAvatar,
           name: 'Sueyeah',
-          content: '你好，一起拼麻辣香锅吗？',
+          content: '姐妹，你今天想拼哪里的麻辣香锅？',
           date: '2019/8/17 21:00'
         }
       ]
@@ -53,30 +51,48 @@ export default {
 <style lang="scss" scoped>
 @import '@/styles/variables.scss';
 .main-body {
-  background-color: $theme-color;
   height: 100vh;
   .title {
+    background-color: $theme-color;
+    border: 1px solid $theme-color;
     font: $title-font;
     text-align: center;
-    line-height: 2rem;
+    padding-top: 6px;
+    line-height: 1.5rem;
   }
   .search {
-    margin: 1rem 2rem 1rem 2rem;
+    background-color: $theme-color;
+    border: 1px solid $theme-color;
+    padding: 0.5rem 1rem 1rem 1rem;
     opacity: 0.95;
   }
   .chat {
-    margin: 1rem 2rem 1rem 2rem;
-    background-color: white;
-    height: 77vh;
     .chat-box {
-      border-bottom: solid #b1b1b1;
-      padding: 8px;
+      border-bottom: 0.1px  solid #b1b1b1;
+      padding: 12px;
       .el-avatar {
         display: inline-block;
         vertical-align: middle;
       }
       .name {
         font-size: 18px;
+        margin: -46px 0 0 50px;
+      }
+      .content{
+        font-size: 14px;
+        color: #606266;
+        margin: -18px 0 0 50px;
+      }
+      .date{
+        font-size: 14px;
+        color: #b1b1b1;
+        margin: 6px 0 0 0;
+      }
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        margin: 8px 0 0 0;
       }
     }
   }
