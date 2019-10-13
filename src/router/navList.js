@@ -11,6 +11,7 @@ const NavList = [
     name: 'home-page',
     component: HomePage,
     icon: 'home',
+    size: 'width: 2em; height:2em; margin-top: 0.2em',
     text: '主页',
     navShow: true
   },
@@ -18,7 +19,8 @@ const NavList = [
     path: '/discover',
     name: 'discover',
     component: Discover,
-    icon: 'home',
+    icon: 'discover',
+    size: 'width: 2.2em; height:2.2em',
     text: '发现',
     navShow: true
   },
@@ -26,7 +28,8 @@ const NavList = [
     path: '/post',
     name: 'post',
     component: Post,
-    icon: 'home',
+    icon: 'post',
+    size: 'width: 2.2em; height:2.2em',
     text: '发布',
     navShow: false
   },
@@ -34,7 +37,8 @@ const NavList = [
     path: '/message',
     name: 'MessagePage',
     component: MessagePage,
-    icon: 'home',
+    icon: 'message',
+    size: 'width: 2.2em; height:2.2em',
     text: '消息',
     navShow: true
   },
@@ -42,7 +46,8 @@ const NavList = [
     path: '/personal-page',
     name: 'personal-page',
     component: PersonalPage,
-    icon: 'home',
+    icon: 'user',
+    size: 'width: 2.2em; height:2.2em',
     text: '我的',
     navShow: true
   }
