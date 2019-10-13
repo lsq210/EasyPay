@@ -1,5 +1,26 @@
 <template>
   <div class="body">
+    <el-card class="box-card" style="padding-top: 20px; padding-bottom: 20px">
+      <span>买家信誉:</span>
+      <el-rate
+          v-model="buy"
+          disabled
+          show-score
+          text-color="#ff9900"
+          score-template="{value}"
+          style="display: inline-block">
+      </el-rate><br>
+      <span>卖家信誉:</span>
+      <el-rate
+        v-model="sale"
+        disabled
+        show-score
+        text-color="#ff9900"
+        score-template="{value}"
+        style="display: inline-block">
+      </el-rate>
+    </el-card>
+    
     <div v-for="item in arrDatas" :key="item.id" class="text item">
       <el-card class="box-card">
         <div slot="header" class="clearfix">
@@ -21,6 +42,8 @@
 export default {
   data () {
     return {
+      buy: 4.5,
+      sale: 5.0,
       arrDatas: [
         {
           id: 1,
@@ -63,45 +86,50 @@ export default {
 
 <style lang="scss">
 @import '@/styles/variables.scss';
-  .body{
-    background-color:white;
+
+.body{
+  background-color:white;
+}
+
+.text {
+  font-size: 12px;
+}
+
+.item {
+  margin-bottom: 18px;
+}
+
+.clearfix{
+  display: table;
+  content: "";
+  color:black;
+  display: flex;
+  .name {
+    font-size:12px;
+    margin:5px;
   }
-
- .text {
-    font-size: 12px;
-  }
-
-  .item {
-    margin-bottom: 18px;
-  }
-
-  .clearfix{
-    display: table;
-    content: "";
-    color:black;
-    display: flex;
-
-    .name{
-      font-size:12px;
-      margin:5px;
-    }
-    .MessageInfo{
+  .MessageInfo {
     font-size:8px;
     color:rgb(100,100,100);
-    }
-  }    
-  .clearfix:after {
-    clear: both
   }
-
-  .box-card {
-    width: 100%;
+}    
+.clearfix:after {
+  clear: both
+}
+.box-card {
+  width: 100%;
+}
+.el-card__header{
+  padding:4px 20px;
+}
+.el-card__body{
+  padding:8px 20px;
+}
+.comment {
+  margin: 20px 0 20px 0;
+  padding-left: 20vw;
+  span {
+    font-size: 16px;
   }
-
-  .el-card__header{
-    padding:4px 20px;
-  }
-  .el-card__body{
-    padding:8px 20px;
-  }
+}
 </style>

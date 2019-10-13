@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import mine from '@/assets/img/news.png'
+import mine from '@/assets/img/lsq.png'
 import friend from '@/assets/img/Sueyeah.png'
 export default {
   data () {
@@ -30,17 +30,21 @@ export default {
       input: '',
       records: [
         {
-          type: 1,
-          time: new Date(),
-          info: '游客',
+          type: 2,
+          info: 'Sueyeah',
           content: '你好！',
+          avator: friend
+        },
+        {
+          type: 1,
+          info: 'lsq210',
+          content: '你好哇~',
           avator: mine
         },
         {
           type: 2,
-          time: new Date(),
-          info: '客户MM',
-          content: '你好哇~',
+          info: 'Sueyeah',
+          content: '姐妹，你今天想拼哪里的麻辣香锅？',
           avator: friend
         }
       ]
@@ -51,8 +55,7 @@ export default {
       this.records.push(
         {
           type: 1,
-          time: new Date(),
-          info: '游客',
+          info: 'lsq210',
           content: this.input,
           avator: mine
         })
@@ -140,9 +143,7 @@ export default {
         }
       }
     }
-  }
-  
-  
+  } 
   img {
     width: 40px;
 		height: 40px;

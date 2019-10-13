@@ -2,19 +2,12 @@
 <template>
   <div>
     <div class="header">
-      <div>
-        <el-input v-model="input"
-          placeholder="请输入内容" 
-          clearable
-          style="margin-top: 5px"
-        >
-        </el-input>
-        <el-button type="success" 
-          icon="el-icon-search" 
-          style="margin-top: 5px;"
-          size="medium" round>搜索
-        </el-button>
-      </div>
+      <el-input
+        placeholder="请输入内容"
+        prefix-icon="el-icon-search"
+        clearable
+        v-model="input">
+      </el-input>
       <div class="classification" style="margin-top: 15px;">
         <div class="icon"
         v-for="(item, index) of iconlist"
@@ -279,14 +272,9 @@ export default {
         height: 35px;
       } 
   }
-  // input {
-  //   margin: 12px 0 8px 0;
-  //   width: 50vw;
-  //   height: 40px;
-  //   opacity: 0.8;
-  // }
   .el-input{
-    width: 70vw;
+    margin-top: 10px;
+    width: 90vw;
   }
 }
 </style>

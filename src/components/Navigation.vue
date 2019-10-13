@@ -33,6 +33,7 @@ export default {
   display: flex;
   z-index: 1;
   .item {
+    margin-top: 4px;
     text-align: center;
     width: 20%;
     cursor: pointer;
