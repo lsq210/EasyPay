@@ -2,14 +2,14 @@
   <el-container>
     <el-header height="40">
       <div class="classification"
-      style="margin-top: 30px">
+        style="margin-top: 10px; border-bottom: 1px solid rgb(255, 187, 18)">
         <div class="icon"
         style="margin-top: 15px"
         v-for="(item, index) of iconlist"
         v-bind:key="`inconlist-${index}`"
         v-on:click="$router.push(item.path)">
         <svg-icon v-bind:icon-class="item.icon" class="pic" ></svg-icon><br>
-        <span v-bind:class="{'active':$route.path===item.path}" v-on:click="$router.push(item.nav)">{{ item.text }}</span>
+        <span v-bind:class="{'active':$route.path===item.nav}" v-on:click="$router.push(item.nav)">{{ item.text }}</span>
         </div>
       </div>
       <router-view style="margin-top: 20px"></router-view>
@@ -47,10 +47,10 @@ export default {
 @import '@/styles/variables.scss';
 .el-header {
     width: 100%;
-    background:$theme-color;
+    // background:$theme-color;
     height:100vh;
     .classification {
-    width: 99%;
+    width: 100%;
     height: 90px;
     background-color: white;
     margin:0 auto;
@@ -64,6 +64,9 @@ export default {
         width: 40px;
         height: 35px;
       } 
+  }
+  .active {
+    color: $theme-color;
   }
 }
 </style>

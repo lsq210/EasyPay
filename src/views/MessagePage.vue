@@ -67,10 +67,9 @@ export default {
     opacity: 0.95;
   }
   .chat {
-    margin: 0.5rem 1rem 1rem 1rem;
     .chat-box {
       border-bottom: 0.1px  solid #b1b1b1;
-      padding: 8px;
+      padding: 12px;
       .el-avatar {
         display: inline-block;
         vertical-align: middle;
