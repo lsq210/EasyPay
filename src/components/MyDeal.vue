@@ -1,6 +1,9 @@
 <template>
   <div class="body">
-    <div v-for="item in arrDatas" :key="item.id" class="text item">
+    <div 
+      v-for="item in arrDatas"
+      :key="item.id"
+      class="text item">
       <el-card class="box-card">
         <div slot="header" class="clearfix">
            <el-avatar :size="40">

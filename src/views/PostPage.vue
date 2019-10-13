@@ -3,7 +3,7 @@
 <!-- 页面头 -->
     <div class="header">
       <svg-icon @click.native="$router.go(-1)" v-bind:icon-class="'back'" class="icon"></svg-icon>
-      <svg-icon @click.native="$router.push(home-page)" v-bind:icon-class="'post'" class="icon"></svg-icon>
+      <svg-icon @click.native="$router.push(home-page)" v-bind:icon-class="'发布'" class="icon"></svg-icon>
     </div>
     <!-- <div class="page_title">
       发布供需信息
