@@ -39,7 +39,6 @@ install:
 
 script:
   - yarn build
-  - yarn build:android
   - yarn release:android
   - mv ./platforms/android/app/build/outputs/apk/release/app-release.apk easy-pay_$TRAVIS_TAG.apk
 

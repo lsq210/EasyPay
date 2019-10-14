@@ -213,7 +213,7 @@ export default {
     background-color:rgba(255, 255, 255, 255);
     margin: 0;
     font-size:20px;
-    height: 50vw;
+    height: 45vw;
   }
   textarea::placeholder {
     color:rgb(172, 172, 172);

@@ -6,7 +6,7 @@
           <img :src="item.img" class="image">
           <div class="name">
             <span> {{item.name}}</span>
-            <el-tag type="warning" style="float: right; padding: 1px 0">详情</el-tag><br>
+            <el-tag type="warning" style="float: right">详情</el-tag><br>
             <span class="MessageInfo">阅读:{{item.read}}</span><br>
             <span class="MessageInfo">讨论:{{item.discuss}}</span>
           </div>
