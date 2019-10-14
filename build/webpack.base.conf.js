@@ -6,6 +6,9 @@ module.exports = {
   entry: {
     app: './src/main.js'
   },
+  externals: {
+    "BMap": "BMap"
+    },
   output: {
     path: config.build.assetsRoot,
     publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
@@ -78,7 +81,8 @@ module.exports = {
             limit: 10000,
             name: 'imgs/[name]--[folder].[ext]'
           }
-        }
+        },
+        exclude: [path.join(__dirname, '..', 'src/assets/svg')]
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
@@ -97,6 +101,16 @@ module.exports = {
             name: 'fonts/[name]--[folder].[ext]'
           }
         }
+      },
+      {
+        test: /\.svg$/,
+        use: {
+          loader: 'svg-sprite-loader',
+          options: {
+            symbolId: 'icon-[name]'
+          }
+        },
+        include: [path.join(__dirname, '..', 'src/assets/svg')]
       }
     ]
   }

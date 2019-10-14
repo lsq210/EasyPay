@@ -1,0 +1,6 @@
+@import './variables.scss';
+
+.el-input__inner {
+  border-radius: 20px;
+  opacity: 0.8;
+}

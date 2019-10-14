@@ -1,6 +1,6 @@
 {
   "name": "easy-pay",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "lsq210 <1135595767@qq.com>",
   "description": "基于 LBS 的供需平台",
   "license": null,
@@ -20,13 +20,18 @@
     "preinstall": "cordova prepare"
   },
   "dependencies": {
-    "vue": "^2.5.17",
     "axios": "^0.18.0",
-    "mockjs": "^1.0.1-beta3",
-    "vue-router": "^3.0.1",
-    "vuex": "^3.0.1",
+    "blueimp-md5": "^2.12.0",
     "cordova-android": "~7.1.2",
-    "cordova-browser": "~5.0.4"
+    "cordova-browser": "~5.0.4",
+    "element-ui": "^2.12.0",
+    "mockjs": "^1.0.1-beta3",
+    "storejs": "^1.0.25",
+    "svg-sprite-loader": "^4.1.6",
+    "vue": "^2.5.17",
+    "vue-baidu-map": "^0.21.22",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/lsq210/EasyPay.svg?branch=master)](https://travis-ci.com/lsq210/EasyPay)
+
 # easy-pay
 
 > 基于 LBS 的供需平台
