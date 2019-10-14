@@ -255,7 +255,8 @@ export default {
     outline: none;
     background-color:rgba(255, 255, 255, 255);
     margin: 24px 0 0 22px;
-    font-size: 16px
+    font-size: 16px;
+    width: 80px;
   }
   input::placeholder {
   /* Mozilla Firefox 19+ */
