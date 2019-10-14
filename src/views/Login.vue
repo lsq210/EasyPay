@@ -36,8 +36,8 @@ import md5 from 'blueimp-md5'
 export default {
   data () {
     return {
-      userName: 'lsq210', // for test
-      password: 'lsq210', // for test
+      userName: '',
+      password: '',
       loginList: [{
         icon: 'weixin',
         text: '微信'
