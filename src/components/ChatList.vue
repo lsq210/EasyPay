@@ -13,8 +13,8 @@
       </li>
     </ul>
     <div class="foot">
-      <el-input v-model="input" placeholder="请输入内容" style="width: 80%"></el-input>
-      <el-button type="warning" plain v-on:click="send">发送</el-button>
+      <el-input v-model="input" placeholder="请输入内容" style="width: 80vw"></el-input>
+      <el-button type="warning" plain v-on:click="send" style="width: 18.5vw">发送</el-button>
     </div>
   </div>
 </template>

@@ -260,7 +260,7 @@ export default {
 @import '@/styles/variables.scss';
 .map {
   width: 100%;
-  height: 72vh;
+  height: 74vh;
   z-index: 0;
 }
 .header {
@@ -271,7 +271,6 @@ export default {
   .classification {
     width: 94vw;
     height: 60px;
-    // background-color: white;
     margin:0 auto;
     display: flex;
       .icon {

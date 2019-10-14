@@ -26,14 +26,13 @@ export default {
 @import '@/styles/variables.scss';
 .bottom {
   width: 100%;
-  height: 68px;
   position: fixed;
   bottom: 0px;
   background-color: white;
   display: flex;
   z-index: 1;
   .item {
-    margin-top: 4px;
+    margin: 4px 0 8px 0;
     text-align: center;
     width: 20%;
     cursor: pointer;
