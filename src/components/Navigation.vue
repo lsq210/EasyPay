@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import NavList from '@/router/NavList'
+import NavList from '@/router/navList'
 export default {
   name: 'navigation',
   data () {
