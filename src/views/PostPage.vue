@@ -3,7 +3,12 @@
 <!-- 页面头 -->
     <div class="header">
       <svg-icon @click.native="$router.go(-1)" v-bind:icon-class="'back'" class="icon"></svg-icon>
-      <svg-icon @click.native="$router.push(home-page)" v-bind:icon-class="'发布'" class="icon"></svg-icon>
+      <svg-icon 
+        @click.native="$message({
+          message: '发布成功！',
+          type: 'success'
+        })" 
+        v-bind:icon-class="'发布'" class="icon"></svg-icon>
     </div>
     <!-- <div class="page_title">
       发布供需信息
@@ -38,12 +43,11 @@
         <img width="100%" :src="dialogImageUrl" alt="">
       </el-dialog>
     </div>
-
 <!-- 选择时间模块 -->
     <div>
       <el-row>
         <el-col :span="8">
-          <div class="Bottom_subtitle">
+          <div class="Bottom_subtitle" style="margin-top: 20px">
             <svg-icon  v-bind:icon-class="'time'" class="icon"></svg-icon>
             完成时间
           </div>
@@ -65,16 +69,21 @@
     <div>
       <el-row>
         <el-col :span="8">
-          <div class="Bottom_subtitle">
+          <div class="Bottom_subtitle" style="margin-top: 20px">
             <svg-icon  v-bind:icon-class="'location'" class="icon"></svg-icon>
             发布地址
           </div>
         </el-col>
         <el-col :span="16">
-          <div class="block">
-            <!-- {{ location.creditProvince }} {{ location.creditCity }} {{ location.creditArea }} {{ location.creditStreet }} -->
+          <div class="money">
+            <input v-model="location" placeholder="选择地址">
           </div>
         </el-col>
+        <!-- <el-col :span="16">
+          <div class="block">
+            {{ location.creditProvince }} {{ location.creditCity }} {{ location.creditArea }} {{ location.creditStreet }}
+          </div>
+        </el-col> -->
       </el-row>
     </div>
 
@@ -82,9 +91,9 @@
     <div>
       <el-row>
         <el-col :span="8">
-          <div class="Bottom_subtitle">
-            <svg-icon  v-bind:icon-class="'money'" class="icon"></svg-icon>
-            设置价格
+          <div class="Bottom_subtitle" style="margin-top: 20px">
+            <svg-icon v-bind:icon-class="'money'" class="icon"></svg-icon>
+            预付金额
           </div>
         </el-col>
 
@@ -203,7 +212,8 @@ export default {
     outline: none;
     background-color:rgba(255, 255, 255, 255);
     margin: 0;
-    font-size:20px
+    font-size:20px;
+    height: 50vw;
   }
   textarea::placeholder {
     color:rgb(172, 172, 172);
@@ -232,15 +242,20 @@ export default {
   text-align: center;
   margin-top: 10px;
   color:rgb(114, 114, 114);
-  font-size:15px;
+  font-size: 18px;
+  .icon {
+    width: 1.2em;
+    height: 1.2em;
+    vertical-align: -0.3em;
+  }
 }
 .money{
   input{
     border: 0;
     outline: none;
     background-color:rgba(255, 255, 255, 255);
-    margin-top : 11px;
-    font-size:15px
+    margin: 24px 0 0 22px;
+    font-size: 16px
   }
   input::placeholder {
   /* Mozilla Firefox 19+ */

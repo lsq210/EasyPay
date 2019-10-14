@@ -18,7 +18,7 @@
       </div>
     </div>
     <div>
-      <baidu-map class="map" @ready="handler" :center="centerr" :zoom=17 >
+      <baidu-map class="map" @ready="handler" :center="centerr" :zoom=15 >
         <bm-geolocation anchor="BMAP_ANCHOR_BOTTOM_RIGHT" :showAddressBar="true" :autoLocation="true"></bm-geolocation>
         <bm-navigation anchor="BMAP_ANCHOR_TOP_RIGHT"></bm-navigation>
         <bm-circle
@@ -35,9 +35,9 @@
           <bm-marker
             :position="{lng: point.position.lng, lat: point.position.lat}" 
             :dragging="false" 
-            @click="infoWindowOpen(item)" 
+            @click="infoWindowOpen(point)" 
             :icon="{
-              url: require('@/assets/img/location.png'),
+              url: require(`@/assets/img/postion${point.type}.png`),
               size: {width: 35, height: 35},
               opts: {
                 imageSize: {width: 35, height: 35}
@@ -70,14 +70,14 @@ export default {
       autoLocationPoint: {lng: 114.3678, lat: 30.541},
       centerr: {lng: 114.3678, lat: 30.541},
       initLocation: false,
-      showinfowin: false,
+      showinfowin: true,
       input: '',
       circlePath: {
         center: {
           lng: 114.3678,
           lat: 30.541
         },
-        radius: 200
+        radius: 1000
       },
       iconlist: [
         {
@@ -108,106 +108,99 @@ export default {
       ],
       pointlist1: [
         {
-          type: '服装',
+          type: 1,
           text: '出售军训服',
           position: {lng: 114.369, lat: 30.542},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '服装',
+          type: 2,
           text: '低价出售遥感专业书',
           position: {lng: 114.366, lat: 30.543},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '服装',
+          type: 3,
           text: '出cherry机械键盘一个',
           position: {lng: 114.367, lat: 30.541},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '书籍',
-          text: '出售军训服',
+          type: 1,
+          text: '闲置西装出租',
           position: {lng: 114.373, lat: 30.549},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '书籍',
+          type: 2,
           text: '低价出售遥感专业书',
           position: {lng: 114.372, lat: 30.550},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '书籍',
-          text: '出cherry机械键盘一个',
+          type: 2,
+          text: '收大一高数课后习题那本书',
           position: {lng: 114.371, lat: 30.548},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '美妆',
-          text: '出售军训服',
-          position: {lng: 114.369, lat: 30.536},
-          showinfowin: false,
-          showpoint: false
-        },
-        {
-          type: '美妆',
-          text: '低价出售遥感专业书',
+          type: 4,
+          text: '收霸王洗发水护发素',
           position: {lng: 114.366, lat: 30.534},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '美妆',
-          text: '出cherry机械键盘一个',
+          type: 4,
+          text: '求拼资生堂发膜',
           position: {lng: 114.367, lat: 30.535},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '数码',
-          text: '出售军训服',
+          type: 3,
+          text: '出一个二手ipad2018，价格可议',
           position: {lng: 114.369, lat: 30.547},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '数码',
-          text: '低价出售遥感专业书',
+          type: 3,
+          text: '收一个显示屏',
           position: {lng: 114.366, lat: 30.548},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '数码',
+          type: 3,
           text: '出cherry机械键盘一个',
           position: {lng: 114.367, lat: 30.549},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '出行',
-          text: '出售军训服',
-          position: {lng: 114.381, lat: 30.542},
+          type: 5,
+          text: '请问大循环晚上几点停呀',
+          position: {lng: 114.372, lat: 30.540},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '出行',
-          text: '低价出售遥感专业书',
+          type: 5,
+          text: '每周五晚公选信部到工学部，求电动车',
           position: {lng: 114.372, lat: 30.543},
           showinfowin: false,
           showpoint: false
         },
         {
-          type: '出行',
-          text: '出cherry机械键盘一个',
+          type: 5,
+          text: '电动车长期出租（仅限校内）',
           position: {lng: 114.373, lat: 30.541},
           showinfowin: false,
           showpoint: false
