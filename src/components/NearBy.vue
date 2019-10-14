@@ -2,7 +2,7 @@
   <div class="body">
     <div v-for="item in arrDatas" :key="item.id" class="text item">
       <el-card class="box-card" shadow="hover">
-        <div slot="header" class="clearfix">
+        <div slot="header" class="clearfix" @click="$router.push('/deal-message')">
            <el-avatar :size="40">
            <img :src="item.img">
             </el-avatar>

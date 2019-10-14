@@ -1,23 +1,23 @@
 <template>
   <el-container>
     <el-header height="40">
-      <svg-icon class="back" icon-class='back'></svg-icon>
+      <svg-icon class="back" icon-class='back' @click.native="$router.go(-1)"></svg-icon>
       <svg-icon class="share" icon-class='share'></svg-icon>
     </el-header>
 
     <div class="person-info">
       <el-avatar :size="90">
-        <img src="@/assets/img/Juhua.png">
+        <img src="@/assets/img/Sueyeah.png">
       </el-avatar>
       <div class="name">
-        <span> Juhua</span>
+        <span> Sueyeah</span>
         <svg-icon class="icon-style" icon-class='IDauthen'></svg-icon>
         <span class="icon-style">已认证</span><br>
         <span class="MessageInfo">2019年9月12日13:38  发布于信息学部一教</span>
       </div>
 
       <el-row class="btnfollow">
-        <el-button round type="warning" size="small">私聊</el-button>
+        <el-button round type="warning" size="small" @click="$router.push('chat')">私聊</el-button>
       </el-row>
     </div>
 
@@ -103,6 +103,7 @@ export default {
   }
   .btnfollow{
     margin-top:40px;
+    margin-left: 10px;
   }
 }
 

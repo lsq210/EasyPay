@@ -267,7 +267,7 @@ export default {
 @import '@/styles/variables.scss';
 .map {
   width: 100%;
-  height: 75vh;
+  height: 72vh;
   z-index: 0;
 }
 .header {

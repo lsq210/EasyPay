@@ -40,7 +40,7 @@ const baseRoutes = [
   },
   {
     path: '*',
-    redirect: '404'
+    redirect: 'home-page'
   }
 ]
 

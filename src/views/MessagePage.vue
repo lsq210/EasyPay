@@ -25,6 +25,7 @@
 <script>
 import newsAvatar from '@/assets/img/news.png'
 import SueyeahAvatar from '@/assets/img/Sueyeah.png'
+import JuhuaAvatar from '@/assets/img/Juhua.png'
 export default {
   data () {
     return {
@@ -34,13 +35,19 @@ export default {
           avatar: newsAvatar,
           name: '通知',
           content: '您收到了一条新的评价！',
-          date: '2019/8/17 20:00'
+          date: '2019/9/12 18:45'
         },
         {
           avatar: SueyeahAvatar,
           name: 'Sueyeah',
           content: '姐妹，你今天想拼哪里的麻辣香锅？',
-          date: '2019/8/17 21:00'
+          date: '2019/9/12 12:00'
+        },
+        {
+          avatar: JuhuaAvatar,
+          name: 'Juhua',
+          content: '我可以帮你打印资料，还需要吗~',
+          date: '2019/9/20 18:03'
         }
       ]
     }

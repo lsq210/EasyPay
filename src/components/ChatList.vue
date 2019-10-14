@@ -32,19 +32,19 @@ export default {
         {
           type: 2,
           info: 'Sueyeah',
-          content: '你好！',
+          content: '姐妹，你今天想拼哪里的麻辣香锅？',
           avator: friend
         },
         {
           type: 1,
           info: 'lsq210',
-          content: '你好哇~',
+          content: '广八路那家吧',
           avator: mine
         },
         {
           type: 2,
           info: 'Sueyeah',
-          content: '姐妹，你今天想拼哪里的麻辣香锅？',
+          content: '好滴好滴~',
           avator: friend
         }
       ]

@@ -28,15 +28,6 @@ export default {
     return {
       arrDatas: [
         {
-          id: 1,
-          ReleaseTime: '2019/9/25/17:09',
-          ReleaseAddr: '信息学部一教',
-          ddl: '2019/9/26/18:00',
-          money: '40r',
-          thing: '出一张明天的《哪吒》电影票，创意城位置很好'
-        },
-
-        {
           id: 2,
           ReleaseTime: '2019/9/18/8:43',
           ReleaseAddr: '教五',

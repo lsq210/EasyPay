@@ -8,8 +8,8 @@
         v-for="(item, index) of iconlist"
         v-bind:key="`inconlist-${index}`"
         v-on:click="$router.push(item.path)">
-        <svg-icon v-bind:icon-class="item.icon" class="pic" ></svg-icon><br>
-        <span v-bind:class="{'active':$route.path===item.nav}" v-on:click="$router.push(item.nav)">{{ item.text }}</span>
+          <svg-icon v-bind:icon-class="item.icon" class="pic" ></svg-icon><br>
+          <span v-bind:class="{'active':$route.path===item.nav}" v-on:click="$router.push(item.nav)">{{ item.text }}</span>
         </div>
       </div>
       <router-view style="margin-top: 20px"></router-view>
