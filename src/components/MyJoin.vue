@@ -8,7 +8,7 @@
           </el-avatar>
           <div class="name">
             <span> {{item.name}}</span>
-            <el-tag type="warning" style="float: right; padding: 1px 0">进入组织</el-tag><br>
+            <el-tag type="warning" style="float: right">进入组织</el-tag><br>
             <span class="MessageInfo">关注:{{item.attention}}</span>
           </div>
         </div>
