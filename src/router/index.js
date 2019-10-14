@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import NavList from './NavList'
+import NavList from './navList'
 import cache from '@/cache'
 import { USER_TOKEN } from '@/cache/keys'
 
