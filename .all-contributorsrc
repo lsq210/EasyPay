@@ -22,6 +22,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "CS-Tao",
+      "name": "CS-Tao",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/22360632?v=4",
+      "profile": "https://home.cs-tao.cc/",
+      "contributions": [
+        "tutorial"
+      ]
     }
   ],
   "contributorsPerLine": 7,

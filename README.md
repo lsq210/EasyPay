@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.com/lsq210/EasyPay.svg?branch=master)](https://travis-ci.com/lsq210/EasyPay)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # easy-pay
@@ -42,6 +42,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/sueyeah"><img src="https://avatars0.githubusercontent.com/u/49059029?v=4" width="100px;" alt=""/><br /><sub><b>sueyeah</b></sub></a><br /><a href="https://github.com/lsq210/EasyPay/commits?author=sueyeah" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/juhua777"><img src="https://avatars2.githubusercontent.com/u/54169245?v=4" width="100px;" alt=""/><br /><sub><b>juhua777</b></sub></a><br /><a href="https://github.com/lsq210/EasyPay/commits?author=juhua777" title="Code">💻</a></td>
+    <td align="center"><a href="https://home.cs-tao.cc/"><img src="https://avatars3.githubusercontent.com/u/22360632?v=4" width="100px;" alt=""/><br /><sub><b>CS-Tao</b></sub></a><br /><a href="#tutorial-CS-Tao" title="Tutorials">✅</a></td>
   </tr>
 </table>
 
